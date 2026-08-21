@@ -1,0 +1,31 @@
+{
+  "name": "exp-os-coach",
+  "version": "0.1.0",
+  "private": true,
+  "description": "EXP/OS Coach + Scoring Service — Hono on Node, [L]/[D+L] pipeline of the scoring framework",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "eval": "tsx eval/run.ts",
+    "eval:idea": "tsx eval/run-idea.ts",
+    "eval:relevance": "tsx eval/run-relevance.ts",
+    "eval:all": "tsx eval/run.ts && tsx eval/run-idea.ts && tsx eval/run-relevance.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.40.0",
+    "@hono/node-server": "^1.13.0",
+    "dotenv": "^16.4.0",
+    "hono": "^4.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
