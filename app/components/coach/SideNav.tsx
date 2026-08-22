@@ -71,7 +71,7 @@ export function SideNav() {
 
       <div className="mt-auto px-3 pt-4">
         <div className="text-[10px] text-on-surface-variant/70 uppercase tracking-wider">AirGroup</div>
-        <div className="text-[11px] text-on-surface-variant mt-0.5">Digital Hangar · V1</div>
+        <div className="text-[11px] text-on-surface-variant mt-0.5">Experimentation Team · V1</div>
       </div>
     </nav>
   )

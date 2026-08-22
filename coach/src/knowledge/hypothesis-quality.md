@@ -1,10 +1,10 @@
 ---
 title: Hypothesis Quality — Knowledge Base
 sources:
-  - "A_B Testing Hypothesis Evaluation Playbook-v3-20260415_111110.pdf": Digital Hangar @LHG playbook, 10 pages — template, 6-dimension framework, validation prompt, gold example
-  - "Hypothesis Coach V0.pdf": Earlier coaching artifact; content-identical to the v3 playbook (same Digital Hangar @LHG doc). Use the v3 PDF as the canonical citation.
-  - "What Makes a Good AB Test.md": Brice's synthesised criteria — hard requirements, quality signals, red flags, hypothesis standards
-  - "Experiment Quality Scoring Framework.md": LH scoring framework v1.0 (note: prompt v1 refers to v1.1; treat as same framework) — Thomke 6-dimension hypothesis rubric with per-dimension point allocations
+  - "A_B Testing Hypothesis Evaluation Playbook-v3-20260415_111110.pdf": Experimentation Team @AirGroup playbook, 10 pages — template, 6-dimension framework, validation prompt, gold example
+  - "Hypothesis Coach V0.pdf": Earlier coaching artifact; content-identical to the v3 playbook (same Experimentation Team @AirGroup doc). Use the v3 PDF as the canonical citation.
+  - "What Makes a Good AB Test.md": the author's synthesised criteria — hard requirements, quality signals, red flags, hypothesis standards
+  - "Experiment Quality Scoring Framework.md": AirGroup scoring framework v1.0 (note: prompt v1 refers to v1.1; treat as same framework) — Thomke 6-dimension hypothesis rubric with per-dimension point allocations
   - "coach/src/prompts/hypothesis-dimension-1-source/v1.md": Current Coach rubric for Source dimension (cross-reference only)
 last_extracted: 2026-05-27
 extracted_by: subagent (Coach knowledge swarm)
@@ -14,7 +14,7 @@ extracted_by: subagent (Coach knowledge swarm)
 
 ## 1. What makes a good hypothesis (synthesis)
 
-A good A/B test hypothesis is **specific, falsifiable, evidence-grounded, and tied to business impact**. The canonical structure used at LHG is built around five required slots and evaluated on Thomke's six dimensions.
+A good A/B test hypothesis is **specific, falsifiable, evidence-grounded, and tied to business impact**. The canonical structure used at AirGroup is built around five required slots and evaluated on Thomke's six dimensions.
 
 **Must-haves:**
 
@@ -30,9 +30,9 @@ A good A/B test hypothesis is **specific, falsifiable, evidence-grounded, and ti
 
 ### Thomke's 6-Dimension Framework (canonical list)
 
-Per Stefan Thomke's *Experimentation Works*, recreated verbatim in the playbook [source: A_B Testing Hypothesis Evaluation Playbook, p.6]. Point allocations from LH scoring framework [source: Experiment Quality Scoring Framework.md, Stage 3A]:
+Per Stefan Thomke's *Experimentation Works*, recreated verbatim in the playbook [source: A_B Testing Hypothesis Evaluation Playbook, p.6]. Point allocations from AirGroup scoring framework [source: Experiment Quality Scoring Framework.md, Stage 3A]:
 
-| # | Dimension | Strong | Weak | LH Points |
+| # | Dimension | Strong | Weak | AirGroup Points |
 |---|-----------|--------|------|-----------|
 | 1 | **Source** | "Qualitative research, customer insights, problems, observations, data mining, competitors" | "Guesses not rooted in observations or facts" | 5 |
 | 2 | **Variables** | "Identifies possible cause and effect" | "Possible cause or effect unknown" | 5 |
@@ -95,7 +95,7 @@ Total Hypothesis Quality Score: **25 points**. Hard block if < 15/25 [source: Ex
 
 A hypothesis is falsifiable when there exists a specific empirical observation that would prove it wrong [source: A_B Testing Hypothesis Evaluation Playbook, p.6 — "Can be shown to be false"].
 
-LH operationalises falsifiability as the **Prediction dimension** (5 points), requiring three specifics [source: Experiment Quality Scoring Framework.md, Dimension 3]:
+AirGroup operationalises falsifiability as the **Prediction dimension** (5 points), requiring three specifics [source: Experiment Quality Scoring Framework.md, Dimension 3]:
 
 - **Specific percentage** (the MDE / expected lift)
 - **Specific timeframe** (typically implied by planned duration)
@@ -124,7 +124,7 @@ Key quote:
 
 ## 5. The hypothesis template / canonical form
 
-### Primary template (LHG playbook v3, 15 April 2026)
+### Primary template (AirGroup playbook v3, 15 April 2026)
 
 > "We believe that by changing **[specific element, e.g., 'the color of the call-to-action button']**, we will increase **[goal metric, e.g., 'the click-through rate (CTR)']** for **[specific metric, e.g., 'the homepage CTA button']** by **[specific percentage, e.g., 'at least 3%']** without impacting **[invariant metric, e.g., 'page load time']**."
 > — *A_B Testing Hypothesis Evaluation Playbook, p.4*

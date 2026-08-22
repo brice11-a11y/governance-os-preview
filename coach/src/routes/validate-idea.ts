@@ -36,7 +36,7 @@ const submitValidationTool: Anthropic.Tool = {
       feedback: {
         type: 'string',
         description:
-          'Affirmation + next-step preview if valid; helpful redirect with 1-2 examples if invalid. Brice-tone: direct, no hedging.',
+          'Affirmation + next-step preview if valid; helpful redirect with 1-2 examples if invalid. the author-tone: direct, no hedging.',
       },
       confidence: {
         type: 'string',

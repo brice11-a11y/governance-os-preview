@@ -14,7 +14,7 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: 'EXP/OS — Experimentation Governance OS',
-  description: 'AirGroup Digital Hangar · Experiment quality governance platform',
+  description: 'AirGroup Experimentation Team · Experiment quality governance platform',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -94,11 +94,11 @@ export const CARTER_STEPS: CarterStep[] = [
   },
   {
     id: 'audience',
-    prompt: `**Who and where?** Define the audience and surface — e.g., "homepage visitors on airgroup.com, all markets" or "logged-in PAY users on the booking flow, Switzerland only." *The AirGroup has five tenants (LH/LX/OS/SN/ITA). The more precise you are here, the cleaner the the A/B testing platform setup.*`,
+    prompt: `**Who and where?** Define the audience and surface — e.g., "homepage visitors on airgroup.com, all markets" or "logged-in PAY users on the booking flow, Switzerland only." *The AirGroup has five brand tenants (brand codes). The more precise you are here, the cleaner the the A/B testing platform setup.*`,
     extract: (answer) => ({ targetSurface: answer }),
     followUp: (answer) => {
       const hasMarket = /market|country|region|all|switzerland|germany|austria|belgium|italy|lh|lx|os|sn|ita/i.test(answer)
-      if (!hasMarket) return `Note: you haven't specified a market. AirGroup has five tenants (LH/LX/OS/SN/ITA) — pin this down before launch.`
+      if (!hasMarket) return `Note: you haven't specified a market. AirGroup has five brand tenants (brand codes) — pin this down before launch.`
       return `Surface and audience locked in.`
     },
   },

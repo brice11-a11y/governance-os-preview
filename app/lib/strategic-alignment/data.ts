@@ -64,11 +64,11 @@ export const THEMES: Theme[] = [
 export const KPI_REGISTER: Record<string, string[]> = {
   ISB: ['Booking Conversion Rate', 'Booking Entry Rate', 'Qualified Booking Entry Rate', 'Average Order Value', 'Offer Based Increment'],
   ANC: ['Ancillary Take Rate', 'ANC Total Revenue (Sold/Flown)', 'Ancillary Revenue per Channel / Pax', 'Click-through Rate for 3rd party ANC'],
-  PPL: ['Log-in Share', 'Reach', 'Enrollments', 'Hallway Funnels Completion', 'FTL SEN CASH', 'Upgrade Awards & eVouchers'],
+  PPL: ['Log-in Share', 'Reach', 'Enrollments', 'Hallway Funnels Completion', 'Elite Cash Awards', 'Upgrade Awards & eVouchers'],
   CS: ['Call Deflection Rate', 'E2E Claim Automation', 'Manual Handling Time Reduction'],
-  TEX: ['Self Check-in Rate', 'Booked a hotel room via self-service', 'Use Damaged Bag Service', 'Use Delayed Bag Service', 'Use Trip Assistant', 'TravelID Use Live Activities', 'Use Meal PreSelect IK'],
+  TEX: ['Self Check-in Rate', 'Booked a hotel room via self-service', 'Use Damaged Bag Service', 'Use Delayed Bag Service', 'Use Trip Assistant', 'Traveler ID Live Activities', 'Use Meal PreSelection'],
   PAYMENT: ['Payment Completion', 'Payment Authorisation Approval', 'Payment Chargeback / Fraud', 'Payment Method Share'],
-  B2B: ['Self-Service Loyalty Bookings + Conversion rate', 'LHG4B traffic and portal usage', 'CIP Fund Usage', 'PPB Revenue and Points redemption', 'CRM Adoption rate'],
+  B2B: ['Self-Service Loyalty Bookings + Conversion rate', 'AirGroup4B traffic and portal usage', 'Corporate Fund Usage', 'Package Revenue and Points redemption', 'CRM Adoption rate'],
 }
 
 export const kpisFor = (valueStreamId?: string): string[] => (valueStreamId ? KPI_REGISTER[valueStreamId] ?? [] : [])

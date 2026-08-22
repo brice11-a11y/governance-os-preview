@@ -8,7 +8,7 @@ sources:
   - DRAFT_05_Scaling_Maturity.md — Maturity model v2: same four levers, radar order tweaked (Accountable / First exp / Active / Trained)
   - DRAFT_07_From_Hope_Based_to_Enforced_Governance.md — Hope vs. enforced governance, the "two clicks" trap, 5-dim process quality scoring
   - DRAFT_09_Leading_Experimentation_Culture_Change.md — Success theatre, HARKing, vocabulary reform, five-question leadership audit
-  - Experimentation Operating Model - RASCI Redesign.md — May 2026 RASCI redesign with Bashe/Andreas; tiered support model, transition plan
+  - Experimentation Operating Model - RASCI Redesign.md — May 2026 RASCI redesign with the platform team; tiered support model, transition plan
   - Experimentation Champion - Framewok.pdf — Slide deck on champion role POC, scale traps, step-by-step approach (Q4-Q2'26)
   - Champion Framework Experimentation Chapter v3.pdf — Formal Champion role doc (Apr 2026): 6-responsibility table, time split, current champions list
   - Experimentation Governance Rollout Policy.pdf — the A/B testing platform rollout policy: why winning tests must not stay live at 100%, exception framework
@@ -92,7 +92,7 @@ From the Champion Framework Chapter v3 PDF §2 (also mirrored in DRAFT_04 and DR
 | **Quality of Experiments** | Ensure adherence to standardized design, bias assessment, documentation, and decision-making practices. Final call on whether a hypothesis is ready. |
 | **Process & Visibility** | Ensure the experimentation process is correctly applied: ticket creation, tracking, visibility across tests. Local enforcer of the golden rules. |
 | **Experimentation Planning** | Represent experimentation during **PI Planning**; align test roadmap with product roadmap and capacity. Prevent "test everything, learn nothing." |
-| **Knowledge Sharing** | First-line contact for experimentation within the team; share learnings via Confluence/DocSpace. Knowledge broker between CoE and team. |
+| **Knowledge Sharing** | First-line contact for experimentation within the team; share learnings via internal wiki. Knowledge broker between CoE and team. |
 | **Guardrails & Metrics** | Alongside DAs, monitor ongoing tests, flag anomalies, ensure correct implementation of guardrails and validated metrics. |
 | **Continuous Enablement** | Identify blockers and training needs; propose hackathons or onboarding sessions for team upskilling. |
 
@@ -108,7 +108,7 @@ From the Champion Framework Chapter v3 PDF §2 (also mirrored in DRAFT_04 and DR
 
 ### What Champions are NOT responsible for
 - **Generating hypotheses for the team.** *"They know their product, their users, and their data better than anyone. The central team cannot and should not generate hypotheses for them."* — DRAFT_03
-- **Setting up the experimentation platform / architecture.** That's Platform (Tier 3) — Bashe/Andreas in current ops, with Andreas as the long-term owner (RASCI §5).
+- **Setting up the experimentation platform / architecture.** That's Platform (Tier 3) — the platform team in current ops, with the platform lead as the long-term owner (RASCI §5).
 - **Vendor escalation to the A/B testing platform.** That's Tier 2 (Offshore FTE) → Tier 3 (Platform).
 - **Statistical PhD-level work.** *"Not statistics PhD level, but solid: hypothesis design, significance, power, bias types, sample ratio mismatch, the peeking problem."* — DRAFT_04 §Required skills.
 
@@ -158,10 +158,10 @@ When a team is not experimenting, the Champion's diagnostic job is to identify w
 
 ## 3. Center of Excellence (CoE) model
 
-### What the CoE is at LH
+### What the CoE is at AirGroup
 The CoE is **not a testing team**. *"It's an enablement team. The shift in identity matters. You stop being the people who run tests and start being the people who make testing possible for everyone else."* — DRAFT_03.
 
-LH operates **Model 3: Center of Excellence with distributed execution** (also called "disciplined decentralization") — *"the only model I've seen work at scale."* — DRAFT_03.
+AirGroup operates **Model 3: Center of Excellence with distributed execution** (also called "disciplined decentralization") — *"the only model I've seen work at scale."* — DRAFT_03.
 
 The two failed alternatives (DRAFT_03):
 - **Centralized:** doesn't scale. A team of 5 cannot support 60 product teams. Becomes a service desk.
@@ -199,14 +199,14 @@ The Champion is **the operational arm of the CoE inside each VS**. Without champ
 
 ## 4. RASCI / operating model
 
-Source: `Experimentation Operating Model - RASCI Redesign.md` (May 2026, Bashe + Andreas + Brice).
+Source: `Experimentation Operating Model - RASCI Redesign.md` (May 2026, the platform lead + the platform lead + the author).
 
 ### Current state (May 2026)
-The team is mid-transition from the **Summer 2025 RACI** to a **new RASCI** because Platform (Bashe/Andreas) scope expanded from A/B testing to the full Data Ecosystem (Ingestion, Unification, Intelligence, Activation). Platform was previously absorbing ~15–22 hrs/week on experimentation-specific work — that bandwidth is gone.
+The team is mid-transition from the **Summer 2025 RACI** to a **new RASCI** because Platform (the platform team) scope expanded from A/B testing to the full Data Ecosystem (Ingestion, Unification, Intelligence, Activation). Platform was previously absorbing ~15–22 hrs/week on experimentation-specific work — that bandwidth is gone.
 
 ### The new ownership split (proposed)
 
-**CoP (Brice + Kate) owns:**
+**CoP (the author + the CoP co-lead) owns:**
 - Guidelines and guardrails
 - Async training (methodology, role-based, onboarding)
 - Tuesday biweekly "Talk about Experimentation"
@@ -219,7 +219,7 @@ The team is mid-transition from the **Summer 2025 RACI** to a **new RASCI** beca
 - DA access management
 - Monthly provider alignment (strategic)
 
-**Platform (Bashe/Andreas) owns:**
+**Platform (the platform team) owns:**
 - Live technical training (dev-specific, tool deep-dives)
 - Tool roll-out (new tool from RFP)
 - Tool migrations documentation
@@ -253,7 +253,7 @@ The team is mid-transition from the **Summer 2025 RACI** to a **new RASCI** beca
 | 1 | AI Q&A tool | Standard questions (setup, config, methodology) | Instant |
 | 1.5 | Champion (VS) | Stream-specific, test design review | Same day |
 | 2 | Offshore FTE | Technical the A/B testing platform, escalations | 48h |
-| 3 | Platform (Bashe/Andreas) | Architecture, vendor escalation, personalization | Per case |
+| 3 | Platform (the platform team) | Architecture, vendor escalation, personalization | Per case |
 
 ### Where ambiguity remains (RASCI §8, decisions still open)
 1. **Knowledge base ownership** — proposed CL accountable, Platform contributes. Decision needed.
@@ -266,7 +266,7 @@ The team is mid-transition from the **Summer 2025 RACI** to a **new RASCI** beca
 
 ## 5. Maturity model
 
-### LH's maturity framework (DRAFT_04/05, four levers)
+### AirGroup.s maturity framework (DRAFT_04/05, four levers)
 
 Maturity is **not** measured by team size, test volume, or tooling sophistication. The acid test:
 > *"Do executives cite specific experiments that changed their mind on important decisions?"* — DRAFT_05
@@ -296,9 +296,9 @@ Plot each VS on the radar each quarter. If a VS is stuck at "accountable" for th
 - Strategic: 19%
 - Transformative: 29%
 
-CoE adoption is the dominant signal of "Transformative" maturity. LH is targeting this band.
+CoE adoption is the dominant signal of "Transformative" maturity. AirGroup is targeting this band.
 
-### Where LH currently sits (mid-2026 signals)
+### Where AirGroup currently sits (mid-2026 signals)
 - 500+ tests/year today, ambition to reach 1,500/year (the A/B testing platform Rollout Policy §1.4; RASCI §1).
 - Operational target: DAs running **3+ tests per product per week autonomously** (RASCI §1).
 - 1 Champion in place (ISB), 1 pending (PPL), 4 VSs without (ANC, TEX, CS, OPS).
@@ -528,4 +528,4 @@ RASCI §8 decision #2 proposes capping throughput in VSs without a champion, but
 The 20% Champion time allocation is "not negotiable" per DRAFT_04 but the ISB Champion's time is **not formally secured with her VS lead** (RASCI §3, action #1, status "Not started"). This is a known P0 risk that the Coach cannot solve — it requires human escalation.
 
 ### Gap 4: Decision authority for exceptions
-The the A/B testing platform Rollout Policy lists "Experimentation Lead" as approver for 4 of 5 exception requirements, but does not specify the escalation when the Experimentation Lead and Product Owner disagree on commercial justification. Treat as ambiguous; Coach should escalate to CoE Lead (Brice) when conflict detected.
+The the A/B testing platform Rollout Policy lists "Experimentation Lead" as approver for 4 of 5 exception requirements, but does not specify the escalation when the Experimentation Lead and Product Owner disagree on commercial justification. Treat as ambiguous; Coach should escalate to CoE Lead (the author) when conflict detected.

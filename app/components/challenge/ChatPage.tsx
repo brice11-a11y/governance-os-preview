@@ -200,7 +200,7 @@ function getSummaryMessage(score: FeasibilityScore): string {
   const total = score.total
   const label = total >= 70 ? 'looks strong' : total >= 50 ? 'has potential but needs work' : 'needs significant strengthening'
   return `**Assessment complete.**\n\nYour idea ${label} with a feasibility score of **${total}/100**.\n\n${total >= 70
-    ? '✓ Ready to enter the governance pipeline. Ensure your the A/B testing platform campaign is set up and your Docspace documentation is prepared.'
+    ? '✓ Ready to enter the governance pipeline. Ensure your the A/B testing platform campaign is set up and your documentation system documentation is prepared.'
     : total >= 50
     ? '⚠ A few dimensions need attention before this reaches the governance gate. Focus on the areas scoring below 60% on the right.'
     : '✕ This experiment needs more groundwork. Revisit your evidence base and hypothesis structure first.'

@@ -1,25 +1,25 @@
 ---
-title: Process, Multi-Team Coordination, LH Context
+title: Process, Multi-Team Coordination, AirGroup Context
 sources:
   - DRAFT_01_The_Experimentation_Process.md — 6-phase process (planning, communication, pre-live, go-live, during, conclusion) + golden rules
   - DRAFT_02_AI_Tools_for_Experimentation.md — Testing Compass (7 gates), Hypothesis Coach (6 dims), Related Tests agent, AI limits
   - DRAFT_06_Managing_Multiple_Teams_on_One_Product.md — collision-first framing of multi-team coordination
   - DRAFT_10_Managing_Multiple_Teams_on_One_Product.md — parallelism-as-goal reframing of the same topic
-  - Experimentation Ways of Working v26.pdf — official Digital Hangar WoW doc (Apr 15, 2026): golden rules, guardrails, BCR thresholds, revenue math
+  - Experimentation Ways of Working v26.pdf — official Experimentation Team WoW doc (Apr 15, 2026): golden rules, guardrails, BCR thresholds, revenue math
   - "Hackathon d'Expérimentation (3).pdf" — image-only PDF: CoE structure diagram (Decentralized vs Champions, with ISB / ANC value streams + Experimentation Platform + Chapter)
   - "Comment améliorer le Stakeholder Map (1).pdf" — image-only PDF: "Tenets of smooth Commercial testing" — Sales push vs Hangar-Experimentation responsibility split, communicate & align, monitor & limit concurrent tests
-  - "Q&A Expérimentation.pdf" — 13-page canonical Q&A from the Digital Hangar team (process steps, the A/B testing platform usage, visibility, theory, test setup, A/A reliability)
+  - "Q&A Expérimentation.pdf" — 13-page canonical Q&A from the Experimentation Team team (process steps, the A/B testing platform usage, visibility, theory, test setup, A/A reliability)
   - "Scaling Experimentation Quality at Booking.com.pdf" — Edgar Cano et al., Mar 2026: ~1,000 parallel experiments, 3-pillar EQ metric, "80% had no power calculation" finding
-  - Podcast Outline - Take 2.md — Brice's own framing of Digital Hangar, 60+ teams, Don't Know / Can't Do / Don't Trust, revenue-not-conversion
+  - Podcast Outline - Take 2.md — the author's own framing of Experimentation Team, 60+ teams, Don't Know / Can't Do / Don't Trust, revenue-not-conversion
 last_extracted: 2026-05-27
 extracted_by: subagent (Coach knowledge swarm)
 ---
 
-# Process, Multi-Team Coordination, LH Context
+# Process, Multi-Team Coordination, AirGroup Context
 
 ## 1. End-to-end experimentation process
 
-Two source documents describe the process. DRAFT_01 is the longer scaling-context narrative; the Digital Hangar Ways of Working v26 PDF is the official LH-internal rulebook. They agree on the spine but use different phase labels.
+Two source documents describe the process. DRAFT_01 is the longer scaling-context narrative; the Experimentation Team Ways of Working v26 PDF is the official AirGroup-internal rulebook. They agree on the spine but use different phase labels.
 
 ### The six phases (DRAFT_01)
 
@@ -32,9 +32,9 @@ Two source documents describe the process. DRAFT_01 is the longer scaling-contex
 | 5. During the test | Weekly guardrail check; no peeking; 2 wk–1 mo duration | Analyst | Weekly guardrail log |
 | 6. Concluding | Decision (ship/kill/inconclusive) + repository entry | Analyst + Product owner | Documented experiment in repository |
 
-### The Digital Hangar's official 5-step framing (Q&A Expérimentation.pdf, p.5)
+### The Experimentation Team's official 5-step framing (Q&A Expérimentation.pdf, p.5)
 
-1. **Ideation & Preparation** — product team prepares the test, internal prioritization with stakeholders, design of experiment, uses dedicated Trackspace template
+1. **Ideation & Preparation** — product team prepares the test, internal prioritization with stakeholders, design of experiment, uses dedicated ticket system template
 2. **Validation** — experiment team reviews and provides suggestions once ticket + the A/B testing platform experiment are created
 3. **Communication** — publish on Collab hub, reach out to impacted parties, ensure no overlaps
 4. **Publishing & Monitoring** — Data Analyst publishes; product team monitors results
@@ -44,12 +44,12 @@ Two source documents describe the process. DRAFT_01 is the longer scaling-contex
 
 ### Artifacts produced at each phase
 
-- **Trackspace ticket** (LH-specific): templated, used from ideation to conclusion, surfaces on the timeline board for org-wide visibility (Ways of Working, p.6)
+- **Ticket system** (AirGroup-specific): templated, used from ideation to conclusion, surfaces on the timeline board for org-wide visibility (Ways of Working, p.6)
 - **Hypothesis** using template: *"By modifying [X], we expect to improve [Y] success metric, resulting in [desired outcome], without adversely affecting [Z] guardrail metric"* (Ways of Working, p.6)
 - **Power calculation** via Booking.com's power calculator (DRAFT_01, p.1; Ways of Working, p.6)
 - **Guardrail thresholds**: BCR drop limits at 5% (bold) / 2% (safe) / 1% (extra safe) — see §5 for revenue math (Ways of Working, p.10)
 - **Collab Hub post** (Teams channel) — both before go-live and after conclusion
-- **Docspace entry** in the Experimentation Repository, templated
+- **documentation system entry** in the Experimentation Repository, templated
 
 ### Golden rules (DRAFT_01 + Ways of Working agree)
 
@@ -92,7 +92,7 @@ From DRAFT_02:
 - Hypothesis evaluation against the 6 Thomke dimensions (source / variables / prediction / measurement / verification / motivation)
 - Methodology routing (Testing Compass — should you even A/B test?)
 - Semantic search across past experiments (Related Tests)
-- "Answer-back" Q&A from a structured knowledge base (Brice's "every answer must be a link" rule, Podcast Outline ch.3)
+- "Answer-back" Q&A from a structured knowledge base (the author's "every answer must be a link" rule, Podcast Outline ch.3)
 
 ### Where human judgment is required
 
@@ -109,7 +109,7 @@ From DRAFT_02:
 
 > "Documentation is the foundation. AI is the multiplier. If you skip the boring step — structured, link-based knowledge capture — your AI tools won't work." — Podcast Outline, ch.3
 
-The IP boundary is implicit, not explicit: the knowledge base lives in LH SharePoint / Docspace / Trackspace and the AI tool sits on top of it. Brice notes that he built the link-based knowledge base for two years *before* GPT existed, then the AI tool was the multiplier.
+The IP boundary is implicit, not explicit: the knowledge base lives in AirGroup document system / documentation system / ticket system and the AI tool sits on top of it. the author notes that he built the link-based knowledge base for two years *before* GPT existed, then the AI tool was the multiplier.
 
 ## 4. Multi-team coordination & collision risk
 
@@ -141,9 +141,9 @@ DRAFT_06 and DRAFT_10 cover the same topic but with different framings — see �
 4. **Test duration limits** — >1 month triggers review; blocks traffic + raises interaction risk
 5. **Centralized guardrail monitoring** — when multiple tests run on a surface, a breach could come from any of them; CoE/owner monitors aggregate
 
-### LH-specific tenet (Stakeholder Map PDF, image content)
+### AirGroup-specific tenet (Stakeholder Map PDF, image content)
 
-The LH "Tenets of smooth Commercial testing" splits responsibility on contested surfaces between two ownership tracks:
+The AirGroup "Tenets of smooth Commercial testing" splits responsibility on contested surfaces between two ownership tracks:
 
 - **Sales – Commercial push**: Ownership = Sales team. Timeline = less than 2 months, predefined time. Metric = Conversion + commercial predefined metrics. Scope = modification on specific pages.
 - **Hangar – Experimentation**: Ownership = VSs (Value Streams). Timeline = stopped when significance is reached. Metric = Any. Scope = modification on pages within VS scope.
@@ -156,13 +156,13 @@ The PDF notes the "BUT": commerce teams currently don't have bandwidth/resources
 
 ## 5. AirGroup tenant structure
 
-The AirGroup Digital Hangar spans **5 airlines**: **AirGroup (LH), Swiss (LX), Austrian (OS), Brussels (SN), and ITA**. Confirmed in the Podcast Outline:
+The AirGroup Experimentation Team spans **multiple brand tenants**: **Brand A (LH), Brand B (LX), Brand C (OS), Brand D (SN), and Brand E (ITA)**. Confirmed in the Podcast Outline:
 
-> "AirGroup decided a few years ago to build something most legacy companies talk about but rarely do — a full agile product organization called the Digital Hangar, spanning AirGroup, Swiss, Austrian, Brussels, and ITA. 60+ product teams, multiple countries, one digital org." — Podcast Outline, §1
+> "AirGroup decided a few years ago to build something most legacy companies talk about but rarely do — a full agile product organization called the Experimentation Team, spanning AirGroup, Swiss, Austrian, Brussels, and ITA. 60+ product teams, multiple countries, one digital org." — Podcast Outline, §1
 
 ### Scale
 
-- **60+ product teams** across the 5 airlines (Podcast Outline §2; DRAFT_01 references "60+ product teams" via Brice)
+- **60+ product teams** across the multiple brand tenants (Podcast Outline §2; DRAFT_01 references "60+ product teams" via the author)
 - **Multiple countries / markets** with different languages (de/en etc. used as variable values in the A/B testing platform, per Q&A p.9)
 - **Different maturity levels** per team — "some testing weekly, some just getting started" (Podcast §2)
 
@@ -212,20 +212,20 @@ The current friction: "Its currently not the case, because commerce team have ba
 
 ## 7. Common Q&A patterns (highest-leverage section)
 
-From `Q&A Expérimentation.pdf` (LH-internal, 13 pages, in French + English mix). Below are the canonical Q&A patterns Carter should be able to answer-back.
+From `Q&A Expérimentation.pdf` (AirGroup-internal, 13 pages, in French + English mix). Below are the canonical Q&A patterns Carter should be able to answer-back.
 
 ### Process questions
 
 **Q: What are the steps of an A/B test?**
-A: 5 steps: Ideation & Preparation (Trackspace ticket) → Validation (experiment team review) → Communication (Collab Hub post) → Publishing & Monitoring (DA publishes, product team monitors) → Take Action (document in repository). [Q&A p.5]
+A: 5 steps: Ideation & Preparation (Ticket system) → Validation (experiment team review) → Communication (Collab Hub post) → Publishing & Monitoring (DA publishes, product team monitors) → Take Action (document in repository). [Q&A p.5]
 
 **Q: Where can I suggest an experiment idea outside my scope?**
-A: Upload via the Trackspace form (Service Desk portal 9, request type 218) and reach out to a core team member to redirect to the right owner. [Q&A p.7]
+A: Upload via the ticket system form (Service Desk portal 9, request type 218) and reach out to a core team member to redirect to the right owner. [Q&A p.7]
 
 ### Tool questions (the A/B testing platform-specific — substitute your tool name if surfacing to other tenants)
 
 **Q: How do I request access to the A/B testing platform?**
-A: Fill the Trackspace form at the Service Desk portal 9, request type 223. [Q&A p.6]
+A: Fill the ticket system form at the Service Desk portal 9, request type 223. [Q&A p.6]
 
 **Q: Where can I conduct experiments?**
 A: As of June 2025: almost all desktop internal pages (if Tealium tracking is implemented, the A/B testing platform is implemented by default). WebViews work. Native pages via Firebase, the A/B testing platform implementation ongoing. Email and marketing pages NOT supported. [Q&A p.6]
@@ -245,13 +245,13 @@ A: NO. Use incognito mode. the A/B testing platform uses `utag.data.tealium_visi
 ### Visibility & alignment questions
 
 **Q: How can I see all A/B tests live now that might affect my scope?**
-A: Visit the Trackspace Portfolio Plan View (the experimentation roadmap). [Q&A p.7]
+A: Visit the ticket system Portfolio Plan View (the experimentation roadmap). [Q&A p.7]
 
 **Q: Where do I post before going live?**
 A: The Experimentation Collab Hub Teams channel. You communicate twice: before go-live on Collab Hub + mention at the "talk about experimentation" meeting, AND comment on your team's post at test conclusion to share findings. [Q&A p.7]
 
 **Q: Where can I find past test results?**
-A: Two places: the 2-minute video gallery showing tests that went live, OR the Experimentation Repository in Docspace (templated entries for every documented test). [Q&A p.7]
+A: Two places: the 2-minute video gallery showing tests that went live, OR the Experimentation Repository in documentation system (templated entries for every documented test). [Q&A p.7]
 
 ### Theory questions
 
@@ -259,7 +259,7 @@ A: Two places: the 2-minute video gallery showing tests that went live, OR the E
 A: A/B testing splits traffic between two or more versions of a webpage. MVT is a form of experimentation that varies multiple sections of a webpage simultaneously and tests all combinations of those variations. [Q&A p.8]
 
 **Q: Why should I document my test results even if no significance was reached or the feature won't ship?**
-A: Four reasons: learn from successes and mistakes, prevent misinterpretations, avoid results getting lost in email chains, give visibility. Use the dedicated Docspace repository with the "Experimentation Result" template. [Q&A p.8]
+A: Four reasons: learn from successes and mistakes, prevent misinterpretations, avoid results getting lost in email chains, give visibility. Use the dedicated documentation system repository with the "Experimentation Result" template. [Q&A p.8]
 
 **Q: How do I define my goal metric?**
 A: Use Microsoft's STEDII framework based on Ron Kohavi's work: Sensitivity, Trustworthiness, Efficiency, Debuggability, Interpretability & Actionability, Inclusivity & Fairness. [Q&A p.8]
@@ -314,11 +314,11 @@ This was integrated into their in-house tool ("ET" / Experiment Tool) as a Quali
 
 > "However, until a few years ago, this flexibility led to a lack of reporting on the quality of experiments. We had no systematic tracking, governance, or assessments of statistical validity." — Booking.com, p.2
 
-### Their three community programs (mirror LH's Champion model)
+### Their three community programs (mirror AirGroup.s Champion model)
 
 - **Experiment Bashes** — decision-makers review past experiments: What did we expect? What did we learn? How valid are the results?
 - **Experiment Reviews** — small groups review randomly chosen experiments end-to-end
-- **Experiment Ambassadors** — experimentation enthusiasts embedded in product teams (≈ LH's Champions)
+- **Experiment Ambassadors** — experimentation enthusiasts embedded in product teams (≈ AirGroup.s Champions)
 
 ### Key Coach-usable quotes (challenging weak inputs)
 
@@ -355,9 +355,9 @@ This is the operating-model context — the Champion is the human that Carter au
 
 ## 10. Useful quotes (verbatim, for citation)
 
-> "I don't get to do experiments. I get to make other people do experiments. That's a completely different job." — Podcast Outline, §2 (Brice Koenig)
+> "I don't get to do experiments. I get to make other people do experiments. That's a completely different job." — Podcast Outline, §2 (the author Koenig)
 
-> "Don't Know, Can't Do, Don't Trust. If you don't diagnose which one you're dealing with, you'll spend six months solving the wrong problem." — Podcast Outline, ch.1 (Brice's team-maturity diagnostic)
+> "Don't Know, Can't Do, Don't Trust. If you don't diagnose which one you're dealing with, you'll spend six months solving the wrong problem." — Podcast Outline, ch.1 (the author's team-maturity diagnostic)
 
 > "You don't scale experimentation by hiring more experimenters. You scale by embedding someone in every team who speaks both languages — the language of the product and the language of evidence." — Podcast Outline, ch.1
 
@@ -417,11 +417,11 @@ Both drafts converge on the same three conflict types, the same three solutions,
 - **The "ISB" and "ANC" value streams** — referenced in the Hackathon diagram and Stakeholder Map but never defined in-source. Likely need a separate org-context extraction.
 - **The ZYS board** — referenced in Stakeholder Map as a visibility surface but never defined.
 - **The "Talk about Experimentation" meeting** — referenced in Q&A as a forum where teams pre-announce tests, but no agenda or cadence given.
-- **Layered experimentation platform support at LH** — DRAFT_06/10 mention Booking.com / Google / Microsoft use it; nothing in the LH sources confirms whether the A/B testing platform at LH supports layered experimentation natively. Carter should not assume it does.
+- **Layered experimentation platform support at AirGroup** — DRAFT_06/10 mention Booking.com / Google / Microsoft use it; nothing in the AirGroup sources confirms whether the A/B testing platform at AirGroup supports layered experimentation natively. Carter should not assume it does.
 - **The Champion training curriculum** — Podcast Outline says "25+ hours of training" but no source extracted here details what's in those hours.
-- **5 tenants × markets matrix** — confirmed the 5 airlines exist; the actual market split per airline / shared-vs-tenant-specific surface map is not in these sources.
+- **5 tenants × markets matrix** — confirmed the multiple brand tenants exist; the actual market split per airline / shared-vs-tenant-specific surface map is not in these sources.
 
 ### Where the Ways of Working v26 PDF and DRAFT_01 mildly disagree
 
-- **Duration**: DRAFT_01 says "2 weeks to 1 month" as recommended duration; Ways of Working v26 says "If Significance Between 2 Weeks and 1 Month: Ensure at least 5 days under confidence interval and 10,000 sessions" and "If No Significance Within 1 Month: Stop the test." Both agree on the 1-month upper bound but Ways of Working is stricter on the early-stop conditions (5 days under CI + 10k sessions). **Carter should use Ways of Working as the source of truth for LH.**
+- **Duration**: DRAFT_01 says "2 weeks to 1 month" as recommended duration; Ways of Working v26 says "If Significance Between 2 Weeks and 1 Month: Ensure at least 5 days under confidence interval and 10,000 sessions" and "If No Significance Within 1 Month: Stop the test." Both agree on the 1-month upper bound but Ways of Working is stricter on the early-stop conditions (5 days under CI + 10k sessions). **Carter should use Ways of Working as the source of truth for AirGroup.**
 - **Process phases**: DRAFT_01 uses 6 phases. Ways of Working/Q&A use 5 steps. Map: Planning+Communication+Pre-Live → "Ideation & Preparation"; Pre-Live → "Validation"; Communication → "Communication"; Go-Live+During → "Publishing & Monitoring"; Conclusion → "Take Action". No real conflict, just labeling.

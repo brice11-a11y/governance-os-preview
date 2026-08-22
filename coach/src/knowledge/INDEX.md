@@ -19,8 +19,8 @@ This index maps **Carter steps + criteria + Coach behaviors** to **knowledge sec
 | `methodology-compass.md` | 420 | COMPASS PRD 7-gate decision tree, methodology catalog (A/B/MVT/switchback/sequential/holdout/fake-door), time-to-significance, decision protocols, one-tailed vs two-tailed |
 | `metrics-measurement.md` | 394 | the A/B testing platform measurable catalog, primary vs guardrail, revenue impact, tracking risks (peeking/novelty/contamination), result presentation, GA4 caveats |
 | `governance-champions.md` | 531 | 10 hard gates, Champion framework + roles, Center of Excellence, RASCI matrix, maturity model, hope→enforced shift, the A/B testing platform Rollout Policy |
-| `process-context.md` | 427 | End-to-end process, multi-team collision model, LH tenant structure, two-lane ownership, Booking.com benchmark, Q&A patterns, Hackathon context |
-| **`hypothesis-feedback.md`** | 100 | **Brice's personally-ranked 8 LH hypotheses** across 4 dimensions (Product Change / Goal Metric / Invariant Metrics / Source) with verbatim rationale. THE calibration ground-truth — load examples from here when tuning any per-dimension prompt. See memory entry [[project-coach-calibration]]. |
+| `process-context.md` | 427 | End-to-end process, multi-team collision model, tenant structure, two-lane ownership, Booking.com benchmark, Q&A patterns, Hackathon context |
+| **`hypothesis-feedback.md`** | 100 | **the author's personally-ranked 8 sample hypotheses** across 4 dimensions (Product Change / Goal Metric / Invariant Metrics / Source) with verbatim rationale. THE calibration ground-truth — load examples from here when tuning any per-dimension prompt. See memory entry [[project-coach-calibration]]. |
 
 ---
 
@@ -34,14 +34,14 @@ This index maps **Carter steps + criteria + Coach behaviors** to **knowledge sec
 | `evidence` | Soft-redirect for weak input | `process-context.md` | §8 (Booking.com 80%-no-power-calc benchmark as social proof) |
 | `variant` | Challenge vague variants | `hypothesis-quality.md` | §2 (anti-patterns) |
 | `variant` | Cite canonical "what users see differently" form | `hypothesis-quality.md` | §5 (canonical template) |
-| `audience` | Pin down tenant/market (LH/LX/OS/SN/ITA) | `process-context.md` | §5 (LH tenant structure) |
+| `audience` | Pin down tenant/market (brand codes) | `process-context.md` | §5 (tenant structure) |
 | `audience` | Two-lane ownership: Sales-Commercial-Push vs Hangar-Experimentation | `process-context.md` | §6 (Stakeholder Map two-lane model) |
 | `primary-metric` | Force ONE primary, reject multi-primary | `metrics-measurement.md` | §2 (primary vs guardrail), §5 (multi-comparison risk) |
 | `primary-metric` | Challenge vague metric definitions ("conversion rate" → which page, which event) | `metrics-measurement.md` | §3 (formulation patterns, "% of {denominator} that {action} on {scope}") |
 | `primary-metric` | Flag out-of-the A/B testing platform metrics | `metrics-measurement.md` | §1 (the A/B testing platform measurable catalog), §8 (gaps) |
 | `expected-lift` | Validate falsifiable prediction with MDE | `methodology-compass.md` | §3 (time-to-significance & power) |
 | `guardrail` | Confirm threshold + breach policy | `metrics-measurement.md` | §2 (primary vs guardrail), §5 (tracking risks) |
-| `guardrail` | Cite the 5%/2%/1% LH defaults | `governance-champions.md` | §1 (hard gate 4 — guardrails defined) |
+| `guardrail` | Cite the 5%/2%/1% defaults | `governance-champions.md` | §1 (hard gate 4 — guardrails defined) |
 | `methodology` | **Recommend methodology** via COMPASS | `methodology-compass.md` | §1 (COMPASS full backbone) → §2 (catalog when AB_TEST is too generic) |
 | `methodology` | Switchback for pricing | `methodology-compass.md` | §2.switchback, §6 (Tarification Test) |
 | `methodology` | One-tailed for harm-only defensive launches | `methodology-compass.md` | §5 (one-tailed vs two-tailed) — **with override of doc bug** |
@@ -97,7 +97,7 @@ These are the highest-leverage things the Coach prompt-writers need to resolve:
 - **Coach guidance:** Open with DRAFT_10's velocity framing; cite DRAFT_06's taxonomy when explaining how conflicts are resolved.
 
 ### 8. Hypothesis Coach V0 and Eval Playbook are content-identical (DEDUP)
-- Both are the same Digital Hangar @ LHG document.
+- Both are the same Experimentation Team @ AirGroup document.
 - **Coach guidance:** Cite the v3 Eval Playbook only when attributing quotes; treat V0 as the same source.
 
 ### 9. The canonical "gold" example in the playbook has no Source (BUG IN SOURCE DOC)

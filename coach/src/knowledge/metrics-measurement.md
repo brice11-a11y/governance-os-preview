@@ -4,7 +4,7 @@ sources:
   - the A/B testing platform Onboarding Session 2 Process.pdf — UIA platform team process; where the A/B testing platform fits in the workflow (touchpoints, metric definition step)
   - Measuring Revenue Impact of A_B Tests-v7-20260415_111313.pdf — the A/B testing platform vs GA4 alignment, Revenue-Per-Session uplift formula, mapping uplift to real revenue via Corona, currency & dampening
   - Risques de Suivi des Métriques.pdf — multiple-comparisons / cumulative alpha risk, why you commit to one primary metric (content is in English despite French title)
-  - Example of test result.pdf — BAGuettes (Excess Baggage Expandable) test, the canonical LH result-presentation template
+  - Example of test result.pdf — Excess Baggage Bundle test test, the canonical AirGroup result-presentation template
   - A_B Test Feasibility Guide_ Calculate Time to Significance-v3-20260415_111006.pdf — baseline rate, MDE, traffic, expected lift, Booking.com Power Calculator
   - Hypothesis Coach V0.pdf (A/B Testing Hypothesis Evaluation Playbook) — hypothesis template with goal metric + invariant metric
   - Q&A Expérimentation.pdf — the A/B testing platform scope (web/WebView/Firebase, no email/marketing), Disjoint Groups, API events, GA4 vs the A/B testing platform, A/A tests, STEDII framework
@@ -20,7 +20,7 @@ extracted_by: subagent (Coach knowledge swarm)
 
 ## 1. What the A/B testing platform can measure (concrete catalog)
 
-the A/B testing platform is the LH Group experimentation platform. It is "implemented by default" anywhere Tealium tracking exists (Q&A p.6). Coach should treat the A/B testing platform as the source of truth for session-level metrics and treat anything outside this stack as out-of-tool.
+the A/B testing platform is the AirGroup experimentation platform. It is "implemented by default" anywhere Tealium tracking exists (Q&A p.6). Coach should treat the A/B testing platform as the source of truth for session-level metrics and treat anything outside this stack as out-of-tool.
 
 ### 1.1 Where the A/B testing platform is implemented
 
@@ -43,7 +43,7 @@ the A/B testing platform is the LH Group experimentation platform. It is "implem
 | `Conversion rate / Goal completion rate` | Goal completions ÷ sessions or visitors | Native binomial metric; supported in Power Calculator workflow as "Binomial Metric → preferred" (Feasibility p.4) |
 | `Bounce rate` | Single-page-view sessions ÷ sessions | Reported in canonical result template (Example of test result p.4) |
 | `API metric` (custom event) | Any event fired by custom JavaScript, e.g. "Add Bag to Cart," "Confirmed Bag Purchased," "Interaction Rate" | **NOT automatically triggered.** Must be fired manually in EVERY variant including Control. If you only fire it in Variant A, the Control variant shows 0 events and the test is broken (Q&A p.9, "API events in the Control variant are showing 0"). |
-| `Bag take rate`, `Confirmed Bag Purchased`, `Bag Add to Cart` | Ancillary-specific custom events for the BAGuettes / ANC value stream | Custom API metrics, fired per variant (Example of test result, multiple pages) |
+| `Bag take rate`, `Confirmed Bag Purchased`, `Bag Add to Cart` | Ancillary-specific custom events for the Excess Baggage Bundle / ANC value stream | Custom API metrics, fired per variant (Example of test result, multiple pages) |
 | `Interaction Rate` | Custom event for engagement on cards/banners (e.g. PPFI Web Banner) | Custom API metric (the A/B testing platform Onboarding p.8) |
 
 ### 1.3 Audience-targeting dimensions ("Who" section)
@@ -84,7 +84,7 @@ Dampening cannot be changed on an existing report; you must duplicate the report
 
 ### 2.1 Strict definitions
 
-- **Goal metric (a.k.a. primary metric):** the single metric the experiment is designed to move. Defined in the hypothesis: "we will increase [goal metric] … by [specific percentage]" (Hypothesis Coach V0 p.4). In the A/B testing platform this is set in the "Goal" field — see canonical "Goal Metric SHOPPING CART → BAG ADDED" in BAGuettes (Example of test result p.1).
+- **Goal metric (a.k.a. primary metric):** the single metric the experiment is designed to move. Defined in the hypothesis: "we will increase [goal metric] … by [specific percentage]" (Hypothesis Coach V0 p.4). In the A/B testing platform this is set in the "Goal" field — see canonical "Goal Metric SHOPPING CART → BAG ADDED" in Excess Baggage Bundle (Example of test result p.1).
 - **Invariant / guardrail metric:** the metric that **must not be impacted negatively** by the change. From the hypothesis template: "…without impacting [invariant metric, e.g. 'page load time']" (Hypothesis Coach V0 p.4). Thresholds vary by risk appetite: BCR drop > 5% for bold tests, > 2% safe, > 1% extra safe (What Makes a Good AB Test, metric standards).
 - **Secondary metric:** monitored but **not the basis for decision-making**. If primary fails and a secondary lights up, that's noise, not a result (Risques §3).
 
@@ -103,10 +103,10 @@ The cumulative-alpha math from Risques §3.1:
 
 Scoring framework penalty: "Multiple primary metrics → Score 0 on single primary metric" sub-score (Scoring Framework, anti-pattern table).
 
-### 2.3 LH-context examples
+### 2.3 AirGroup-context examples
 
 **Strong primary metrics:**
-- "Bag Add to Cart rate" on the Shopping Cart page (BAGuettes test, Example of test result p.1)
+- "Bag Add to Cart rate" on the Shopping Cart page (Excess Baggage Bundle test, Example of test result p.1)
 - "Click-through rate (CTR) on homepage CTA button" (Hypothesis Coach V0 p.9)
 - "Interaction Rate on PPFI Web Banner" for logged-in mobile users with an upcoming flight (the A/B testing platform Onboarding p.8)
 - "Revenue Per Session" for any commercial test where revenue is the explicit goal (Revenue Impact, throughout)
@@ -123,16 +123,16 @@ Scoring framework penalty: "Multiple primary metrics → Score 0 on single prima
 
 ### 3.1 The canonical "rate" pattern
 
-LH formulates conversion-style metrics as binomial rates because they reach significance faster than continuous metrics (Feasibility p.4): "Binomial Metric (e.g., conversion rate) → preferred."
+AirGroup formulates conversion-style metrics as binomial rates because they reach significance faster than continuous metrics (Feasibility p.4): "Binomial Metric (e.g., conversion rate) → preferred."
 
 **Pattern:**
 > `% of {denominator} that {took action} out of {denominator} that {entered scope}`
 
-Concrete examples from BAGuettes (Example of test result p.4):
+Concrete examples from Excess Baggage Bundle (Example of test result p.4):
 - "Add Bag to Cart" on Desktop Control = 5.76% — i.e. sessions that added a bag ÷ sessions on the bag page
 - "Bounce Rate" on Desktop Variant A = 1.87%
 
-### 3.2 Other LH-canonical patterns
+### 3.2 Other AirGroup-canonical patterns
 
 - **Per-session metrics** (preferred over absolute counts): RPS, AOV, "clicks per user," "Confirmed Bag Purchased per session." Rationale: "Normalize metrics by sample size … 'clicks per user' not 'total clicks.'" Scoring framework awards 2 points for normalization, 0 for raw totals (Scoring Framework §3B).
 - **Lift expressed as relative %**: `Revenue Uplift (%) = [RPS(Test) − RPS(Control)] × 100 / RPS(Control)` (Revenue Impact p.4).
@@ -247,7 +247,7 @@ This is HARKing (Hypothesizing After Results Are Known) — cherry-picking metri
 
 ### 5.5 Sample Ratio Mismatch (SRM)
 
-If treatment and control sizes diverge from the configured split, the test is contaminated. Common LH causes from Q&A §7.1.1:
+If treatment and control sizes diverge from the configured split, the test is contaminated. Common AirGroup causes from Q&A §7.1.1:
 
 - **Action conditions differ between variants** (e.g., Control has "pagetype = TRAVELER" while Variant A has the action condition blank → fires on every page). This single misconfiguration is the documented #1 cause of "Why is it not 50/50?"
 - Bot filtering, consent banner interaction, redirect chain, SDK initialization timing, server-side caching (What Makes a Good AB Test).
@@ -268,22 +268,22 @@ If a bug is fixed mid-test and the test continues, carryover effects contaminate
 
 From Feasibility p.7: "Tests with a higher baseline conversion rate (e.g., 10%) are more likely to achieve significance within a reasonable timeframe compared to tests with low rates (e.g., 1%). … Smaller lifts (e.g., ±1%) require significantly larger sample sizes and longer test durations." Use the Booking.com Power Calculator before launch; industry standard expected lift = 5%.
 
-## 6. Test result presentation — the BAGuettes template
+## 6. Test result presentation — the Excess Baggage Bundle template
 
-Source: Example of test result.pdf — "BAGuettes – Excess Baggage Expandable" by Linh Dang, ANC value stream. This is the canonical LH result page template.
+Source: Example of test result.pdf — "Excess Baggage Bundle – Excess Baggage Expandable" by Linh Dang, ANC value stream. This is the canonical AirGroup result page template.
 
 ### 6.1 Standard header / context block
 
 ```
 Experimentation Start Date | Experimentation End Date
 Goal Metric                | Impact On Goal Metric
-Next Step                  | Tenant (LH / OS / SN / LX)
+Next Step                  | Tenant (brand codes)
 Market (All / specific)    | Device (Mobile / Desktop / Both)
 Number of Variants (incl. Control)
 Language Tested            | Pages Modified
 Value Stream               | Art / Team / Author
 Developer / PO / BA / Designer
-Trackspace Ticket link
+ticket system Ticket link
 ```
 
 ### 6.2 Body sections
@@ -301,7 +301,7 @@ Trackspace Ticket link
 
 ### 6.3 Coach implication
 
-If a user asks "what does a finished result look like?", Carter can surface the BAGuettes structure: header context block → executive summary → per-device tables with `(no significant)` annotations → next steps → learnings. The explicit "(no significant)" labelling on every non-significant cell is a chapter convention — Coach should preserve it when generating result previews.
+If a user asks "what does a finished result look like?", Carter can surface the Excess Baggage Bundle structure: header context block → executive summary → per-device tables with `(no significant)` annotations → next steps → learnings. The explicit "(no significant)" labelling on every non-significant cell is a chapter convention — Coach should preserve it when generating result previews.
 
 ## 7. Useful quotes (verbatim, for citation)
 
@@ -311,7 +311,7 @@ If a user asks "what does a finished result look like?", Carter can surface the 
 > "GA4 and the A/B testing platform will never report identical session counts, due to fundamental differences in tracking logic, session handling, and attribution timing."
 > — Measuring Revenue Impact, p.3
 
-> "On average, GA4 reports 8.2% fewer sessions compared to the A/B testing platform. This is the closest alignment achievable with the current LHG setup."
+> "On average, GA4 reports 8.2% fewer sessions compared to the A/B testing platform. This is the closest alignment achievable with the current AirGroup setup."
 > — Measuring Revenue Impact, p.3
 
 > "the A/B testing platform's multi-layer fallback (Tealium → RefX datalayer → confirmation URL) makes it structurally more reliable for revenue capture than GA4, which depends on a single data source with no wait or retry mechanism."

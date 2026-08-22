@@ -26,7 +26,7 @@ const SOURCE_PATTERNS: { name: string; re: RegExp }[] = [
   // v2 — observation/measurement language (quantified competitor benchmarks count
   // when paired with numeric_evidence). "measured" without explicit observation
   // subject is excluded because "performance measured by X" is a metric-definition
-  // idiom (calibrated against Brice's lh-bk corpus).
+  // idiom (calibrated against the author's airgroup-bk corpus).
   { name: 'observed', re: /\bobserv(e|ed|ing)\b/i },
   { name: 'we_measured', re: /\b(we|the team|i|they)\s+measur(ed|ing)\b/i },
   { name: 'benchmarked', re: /\bbenchmark(ed|ing|s)?\b/i },

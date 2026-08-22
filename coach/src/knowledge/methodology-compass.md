@@ -6,8 +6,8 @@ sources:
   - "One-Tailed Testing Negative Impacts.pdf — When and how to run one-tailed tests in the A/B testing platform (manual stop + custom R analysis)."
   - "A_B Test Feasibility Guide_ Calculate Time to Significance-v3-20260415_111006.pdf — Booking.com Power Calculator workflow for feasibility / runtime estimation."
   - "DRAFT_08_Decision_Protocols.md — Pre-commit decision protocol framework (success thresholds, implementation criteria, action frameworks)."
-  - "Tarification Test.pdf — Brice's deck framing the switchback methodology for ancillary pricing and the AAM operational unlock."
-  - "Methodology_Confidence_to_Pluralsight.md — Onboarding restructure leaning on Spotify Confidence for stats backbone + LHG content for process / advanced designs."
+  - "Tarification Test.pdf — the author's deck framing the switchback methodology for ancillary pricing and the AAM operational unlock."
+  - "Methodology_Confidence_to_Pluralsight.md — Onboarding restructure leaning on Spotify Confidence for stats backbone + AirGroup content for process / advanced designs."
 last_extracted: 2026-05-27
 extracted_by: subagent (Coach knowledge swarm)
 ---
@@ -84,7 +84,7 @@ type MethodologyType =
 
 ### 1.4 Coach extensions to COMPASS (not in PRD, but required for real recommendations)
 
-The PRD's terminal `AB_TEST` outcome is under-specified for LHG's reality. Once Q7 lands on `AB_TEST`, the Coach should layer a **secondary methodology decision** using these branches (sourced from the other docs in this file):
+The PRD's terminal `AB_TEST` outcome is under-specified for AirGroup's reality. Once Q7 lands on `AB_TEST`, the Coach should layer a **secondary methodology decision** using these branches (sourced from the other docs in this file):
 
 - **Cannot randomize at user/session level** (e.g., pricing engine sets one price per route) → **Switchback** (see §2.6, §2.10) [source: Tarification Test, pp.5,8; Switchback Framework, p.3]
 - **Goal is to detect harm only** (defensive launches: prominent login, required UX changes) → **One-tailed A/B** (see §5) [source: One-Tailed Testing, p.4]
@@ -119,11 +119,11 @@ The PRD's terminal `AB_TEST` outcome is under-specified for LHG's reality. Once 
 
 **When to use.** Multiple independent factors changing simultaneously, and you specifically want to estimate *interaction effects* between them.
 
-**When NOT to use.** Low traffic; you only care about the combined effect (run a standard A/B of the combined treatment instead). Not covered in the LHG source docs — flag as gap. [gap: not in sources]
+**When NOT to use.** Low traffic; you only care about the combined effect (run a standard A/B of the combined treatment instead). Not covered in the AirGroup source docs — flag as gap. [gap: not in sources]
 
 ### 2.4 Sequential testing
 
-**When to use.** You want valid inference while peeking, or you want to stop early when an effect is overwhelming. Covered in Spotify Confidence's stats backbone, which LHG now leans on for the DS track. [source: Methodology_Confidence_to_Pluralsight.md, §DS4]
+**When to use.** You want valid inference while peeking, or you want to stop early when an effect is overwhelming. Covered in Spotify Confidence's stats backbone, which AirGroup now leans on for the DS track. [source: Methodology_Confidence_to_Pluralsight.md, §DS4]
 
 > "Group sequential testing vs always-valid confidence sequences. When to peek at results. Early stopping rules. The cost of peeking without correction." — Methodology_Confidence_to_Pluralsight.md, §DS4
 
@@ -135,7 +135,7 @@ The PRD's terminal `AB_TEST` outcome is under-specified for LHG's reality. Once 
 
 **When NOT to use.** Short-lived features; low traffic that can't afford a permanent holdout. [gap: holdout details not in sources]
 
-### 2.6 Switchback (the LHG flagship for non-randomizable cases)
+### 2.6 Switchback (the AirGroup flagship for non-randomizable cases)
 
 **When to use.** Randomization unit is not the user (most commonly **ancillary pricing at route level**). LATAM's airline-scale validation cited; standard A/B fails because the pricing engine cannot be reached by the A/B testing platform (which sits on the .com frontend).
 
@@ -209,9 +209,9 @@ This is a *halt* outcome, not a methodology — Coach should help the user fix t
 
 ### 2.12 Pricing test (special case — Tarification Test deck)
 
-**When to use.** Any ancillary pricing experiment at LHG. The deck makes the case explicit: standard A/B fails because the A/B testing platform cannot reach the backend pricing stack — use switchback instead.
+**When to use.** Any ancillary pricing experiment at AirGroup. The deck makes the case explicit: standard A/B fails because the A/B testing platform cannot reach the backend pricing stack — use switchback instead.
 
-> "DAP MVP Price exploration proved added value of dynamic Pricing… 100-day price exploration on ASR for LH, OS, SN, LX… Showed customers willingness to pay." — Tarification Test, p.6
+> "DAP MVP Price exploration proved added value of dynamic Pricing… 100-day price exploration on ASR for Brand A, Brand B, Brand C, Brand D… Showed customers willingness to pay." — Tarification Test, p.6
 
 > "Switchback: each route is its own control… 1 day washout between switches." — Tarification Test, p.8
 
@@ -221,9 +221,9 @@ This is a *halt* outcome, not a methodology — Coach should help the user fix t
 
 ## 3. Time to significance & power
 
-### 3.1 The LHG workflow (Booking.com Power Calculator)
+### 3.1 The AirGroup workflow (Booking.com Power Calculator)
 
-LHG uses the **Booking.com Power Calculator** for feasibility checks and runtime estimation. *"This tool was developed by Booking.com and may differ from computations provided by the A/B testing platform. However, it remains a relevant tool for feasibility checks and planning experiments."* [source: A/B Test Feasibility Guide, p.3]
+AirGroup uses the **Booking.com Power Calculator** for feasibility checks and runtime estimation. *"This tool was developed by Booking.com and may differ from computations provided by the A/B testing platform. However, it remains a relevant tool for feasibility checks and planning experiments."* [source: A/B Test Feasibility Guide, p.3]
 
 **Inputs.**
 1. **Test type** — "Base vs One Variant" [p.4]
@@ -335,12 +335,12 @@ The onboarding restructure (see Methodology_Confidence_to_Pluralsight.md) reshap
 ### 6.1 What changed
 
 - **Stats backbone = Confidence.** Spotify Confidence becomes the statistical reference for sequential testing, power/alpha, effect sizes, multiple comparisons, CUPED, ratio metrics. *"Confidence's statistics content is battle-tested at Spotify's scale — thousands of experiments, millions of users. It should be the backbone for the DS track."* [Methodology_Confidence_to_Pluralsight.md, §0]
-- **Process & advanced designs = LHG (Brice's) content.** Hypothesis coach, switchback, one-tailed workflow, decision protocols, documentation/LLM angle — these are LHG-unique and dominate the PM track. [§0, §8]
+- **Process & advanced designs = AirGroup (the author's) content.** Hypothesis coach, switchback, one-tailed workflow, decision protocols, documentation/LLM angle — these are AirGroup-unique and dominate the PM track. [§0, §8]
 
 ### 6.2 Methodology implications for the Coach
 
 - For **standard A/B mechanics** and **stat tests deep dive** (superiority, non-inferiority, inferiority, one-tailed, multiple comparisons), defer to Confidence's framing. [§DS3]
-- For **switchback / quasi-experimental** recommendations, defer to LHG content (Switchback Framework PDF, Tarification Test deck). Confidence does not cover these. [§DS5]
+- For **switchback / quasi-experimental** recommendations, defer to AirGroup content (Switchback Framework PDF, Tarification Test deck). Confidence does not cover these. [§DS5]
 - For **CUPED / variance reduction** ("typically reduces variance by 20-40% for engagement metrics, 10-20% for revenue"), Confidence is authoritative. [§DS4]
 
 ### 6.3 Migration tradeoffs
@@ -408,11 +408,11 @@ The onboarding restructure (see Methodology_Confidence_to_Pluralsight.md) reshap
 
 - **A/B/n** (multi-variant) — not formally named in any of the 7 source files. Coach should treat as A/B with N-arm sample-size recheck. [gap]
 - **MVT (multivariate / factorial)** — not covered. [gap]
-- **Holdout design** — only referenced obliquely via Confidence's "exclusive experiments." No LHG-specific holdout policy in scope. [gap]
-- **Sequential testing operational guidance.** Confidence covers the theory but the LHG-specific source files do not document when LHG analysts should use it on the A/B testing platform (which has no native always-valid CIs). [gap]
-- **Quasi-experimental methods** (DiD, synthetic control, RDD) — mentioned in the Confidence-migration doc as DS5 content but no LHG-authored playbook is in this slice. [gap]
+- **Holdout design** — only referenced obliquely via Confidence's "exclusive experiments." No AirGroup-specific holdout policy in scope. [gap]
+- **Sequential testing operational guidance.** Confidence covers the theory but the AirGroup-specific source files do not document when AirGroup analysts should use it on the A/B testing platform (which has no native always-valid CIs). [gap]
+- **Quasi-experimental methods** (DiD, synthetic control, RDD) — mentioned in the Confidence-migration doc as DS5 content but no AirGroup-authored playbook is in this slice. [gap]
 - **Bayesian methods** — not mentioned anywhere in the seven sources. [gap]
-- **Confidence threshold convention.** The DRAFT_08 example table uses **90%** confidence; standard LHG practice elsewhere uses **95%** (and the A/B testing platform defaults two-tailed). Coach should default to 95% but allow the user to override at planning time. [conflict / clarification]
+- **Confidence threshold convention.** The DRAFT_08 example table uses **90%** confidence; standard AirGroup practice elsewhere uses **95%** (and the A/B testing platform defaults two-tailed). Coach should default to 95% but allow the user to override at planning time. [conflict / clarification]
 - **Fake-door 15% conversion threshold.** PRD prescribes ">15% = proceed" without justification. This is a heuristic, not a defensible decision rule for every product. Treat as a starting point, not a law. [gap]
 
 ### 8.3 Coach behavioural rule
