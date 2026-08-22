@@ -54,7 +54,7 @@ export const COMPASS_STEPS: CompassStep[] = [
     followUp: (answer) => {
       const hasPercentage = /%|rate|ratio|conversion|per session/i.test(answer)
       const hasPlatformMention = /monetate|session|page|visit/i.test(answer)
-      if (hasPercentage && hasthe A/B testing platform) return `Measurable and trackable. This metric setup will pass the Measurement Quality gate.`
+      if (hasPercentage && hasPlatformMention) return `Measurable and trackable. This metric setup will pass the Measurement Quality gate.`
       if (!hasPercentage) return `Try to express this as a rate or ratio — absolute numbers are hard to interpret across segments.`
       return `Ensure this metric exists in your the A/B testing platform setup before submitting. Ungated metrics are a common build blocker.`
     },
